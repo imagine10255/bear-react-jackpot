@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-around;
     height: 40px;
-    width: 200px;
+    /*width: 200px;*/
     overflow: hidden;
     border: 1px solid #fff;
 }
@@ -12,7 +12,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    height: 400px;
+    height: 800px;
 }
 
 .jackpot div div {

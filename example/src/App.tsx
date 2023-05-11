@@ -20,8 +20,13 @@ function App() {
 
     useEffect(() => {
         setInterval(() => {
-            setValue(curr => curr + getRandom(10));
-        }, 8000);
+            console.log('=========round 2===========')
+            setValue(curr => {
+                return curr + getRandom(9999);
+            });
+
+
+        }, 3000);
 
     }, []);
 
@@ -38,9 +43,9 @@ function App() {
             <h1>Vite + React</h1>
             <div className="card">
 
-                <Jackpot number={value} />
+                <Jackpot amount={value} length={10}/>
 
-                {value}
+                curr: {value}
 
                 <p>
           Edit <code>src/App.tsx</code> and save to test HMR
