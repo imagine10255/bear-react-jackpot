@@ -20,7 +20,7 @@ function App() {
 
     useEffect(() => {
         setInterval(() => {
-            setValue(curr => curr += getRandom(10));
+            setValue(curr => curr + getRandom(10));
         }, 8000);
 
     }, []);
@@ -39,6 +39,8 @@ function App() {
             <div className="card">
 
                 <Jackpot number={value} />
+
+                {value}
 
                 <p>
           Edit <code>src/App.tsx</code> and save to test HMR

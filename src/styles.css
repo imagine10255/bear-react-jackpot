@@ -1,25 +1,29 @@
-
 .jackpot {
     display: flex;
-    height: 20px; /* or whatever height you want for the digits */
+    justify-content: space-around;
+    height: 40px;
+    width: 200px;
     overflow: hidden;
+    border: 1px solid #fff;
 }
 
 .jackpot div {
-    width: 20px; /* or whatever width you want for the digits */
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: flex-start;
+    align-items: center;
+    height: 400px;
 }
 
 .jackpot div div {
-    height: 20px; /* should be the same as the height of .jackpot */
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    color: #fff;
 }
 
-.active {
-    color: red; /* or whatever color you want for the active digit */
+.jackpot div div.active {
+    color: red;
 }

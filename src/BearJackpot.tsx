@@ -15,16 +15,21 @@ const BearJackpot = ({number}: JackpotProps) => {
 
     const springs = useSprings(
         digits.length,
-        digits.map((digit, index) => ({
-            from: { transform: 'translateY(0%)' },
-            to: { transform: `translateY(-${targetDigits[index]}00%)` },
-            config: { ...config.molasses, duration: 1000 * (digits.length - index) },  // 修改了這裡
-            reset: false,
-        }))
+        digits.map((digit, index) => {
+            const target = Number(targetDigits[index]);
+            const isRollBack = target < digit;
+            const toValue = isRollBack ? target + 10 : target;
+            return {
+                from: { transform: `translateY(-${digit * 10}%)` },
+                to: { transform: `translateY(-${toValue * 10}%)` },
+                config: { ...config.molasses, duration: 1000 * (digits.length - index) },
+                reset: false,
+            }
+        })
     );
 
     useEffect(() => {
-        setDigits(targetDigits);
+        setDigits(targetDigits.map(Number));
     }, [number]);
 
     return (
