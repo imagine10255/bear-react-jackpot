@@ -7,9 +7,11 @@ interface JackpotProps {
     number: number;
 }
 
+const defaultValue = Array(5).fill('0');
+
 const BearJackpot = ({number}: JackpotProps) => {
-    const [digits, setDigits] = useState(Array(5).fill('0'));
     const targetDigits = number.toString().padStart(5, '0').split('');
+    const [digits, setDigits] = useState(number === 0 ? targetDigits: defaultValue);
 
     const springs = useSprings(
         digits.length,
@@ -17,7 +19,7 @@ const BearJackpot = ({number}: JackpotProps) => {
             from: { transform: 'translateY(0%)' },
             to: { transform: `translateY(-${targetDigits[index]}00%)` },
             config: { ...config.molasses, duration: 1000 * (digits.length - index) },  // 修改了這裡
-            reset: true,
+            reset: false,
         }))
     );
 

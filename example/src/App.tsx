@@ -16,12 +16,12 @@ function getRandom(x: number){
 
 function App() {
 
-    const [value, setValue] = useState(0);
+    const [value, setValue] = useState(12345);
 
     useEffect(() => {
         setInterval(() => {
-            setValue(curr => curr += getRandom(999));
-        }, 2000);
+            setValue(curr => curr += getRandom(10));
+        }, 8000);
 
     }, []);
 
