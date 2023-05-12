@@ -1,6 +1,6 @@
 {
   "name": "bear-react-jackpot",
-  "version": "0.0.1",
+  "version": "0.0.2-alpha.0",
   "description": "Most modern jackpot with hardware accelerated transitions for ReactJS",
   "keywords": [
     "react",
